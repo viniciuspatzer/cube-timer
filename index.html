@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/sass/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script type="module" defer src="src/js/controller.js"></script>
+    <title>VP Timer | Keep track of your cube solvings</title>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div>
+            <img class="logo-img" src="src/img/logo.png" alt="logo">
+            <h1 class="logo-title">VP Timer</h1>
+        </div>
+        <div>
+            <i class="fas fa-history fa-3x scale-transparent"></i>
+            <i class="far fa-chart-bar fa-3x scale-transparent"></i>
+        </div>
+    </div>
+
+    <div class="main">
+        <p class="scramble-formula scale-transparent"></p>
+        <div class="center">
+            <h1 class="timer scale-transparent">00:00:000</h1>
+            <p class="timer-description">Tap screen or spacebar to start and stop timer</p>
+            <!-- <a class="delete-btn scale-transparent">DELETE</a> -->
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div>
+            <p>Fastest of 5: <span class="fastest-of-5">N/A</span></p>
+            <p>Slowest of 5: <span class="slowest-of-5">N/A</span></p>
+        </div>
+
+        <div>
+            <p>Average of 5: <span class="average-of-5">N/A</span></p>
+            <p>Average of 12: <span class="average-of-12">N/A</span></p>
+        </div>
+
+        <div>
+            <p>Slowest Time: <span class="slowest-time">N/A</span></p>
+            <p>Fastest Time: <span class="fastest-time">N/A</span></p>
+        </div>
+
+        <div>
+            <p>Amount of solves:<span class="amount-of-solves">N/A</span></p>
+            <p>Overall average: <span class="overall-average">N/A</span></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+export const SCRAMBLE_CASES = ['F', 'B', 'R', 'L', 'U', 'D', 'F\'', 'B\'', 'R\'', 'L\'', 'U\'', 'D\'', 'F2', 'B2', 'R2', 'L2', 'U2', 'D2'];

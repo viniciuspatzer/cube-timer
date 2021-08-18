@@ -1,0 +1,51 @@
+
+// Colors:
+$white: #FFFFFF; // (blue)
+$transparent: rgba(0, 0, 0, 0.70); // (blue)
+$blue: #176FD4; // (blue)
+$green: #6FE86F; // (green)
+$red: #EB6363; // (red)
+
+
+// Reset
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+
+// Font
+html{
+    font-family: 'Inter', sans-serif;
+    font-size: 62.5%;
+}
+
+
+// Other
+body{
+    height: 100%;
+
+    background-color: #176FD4;
+}
+
+body > *{
+    padding: 0 2%;
+}
+
+.hidden{
+    display: none;
+}
+
+// Animations
+.scale-transparent{
+    transition: 0.1s;
+    cursor: pointer;
+
+    
+    &:hover{
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}

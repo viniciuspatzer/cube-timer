@@ -1,0 +1,118 @@
+@import 'config';
+
+///////////////////////
+///////////////////////
+
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7rem;
+    background-color: $transparent;
+    border-bottom: 2px solid $white;
+
+    div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo-img{
+            max-width: 4rem;
+            cursor: pointer;
+        }
+    
+        .logo-title{
+            color: $white;
+            font-weight: 300;
+            font-size: 2.8rem;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+
+        i{
+            color: $white;
+            margin-left: 2rem;
+        }
+    }
+}
+
+///////////////////////
+///////////////////////
+
+.main{
+    position: relative;
+    height: calc(100vh - 20rem);
+
+    .scramble-formula{
+        width: 90%;
+        margin: 0 auto;
+        padding-top: 3rem;
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-align: center;
+        color: $white;
+    }
+    
+    .center{
+        width: 90%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: column;
+
+        .timer{
+            color: $white;
+            font-size: 5rem;
+            max-width: 100%;
+            text-align: center;
+            font-weight: 400;
+            line-height: 5rem;
+        }
+    
+        .timer-description{
+            color: $white;
+            font-size: 1.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .delete-btn{
+            color: $white;
+            font-size: 1.4rem;
+            width: 100px;
+            text-align: center;
+            border: 1px solid $white;
+            margin: 1rem auto;
+            padding: 0.75rem;
+        }
+    }
+}
+
+///////////////////////
+///////////////////////
+
+.bottom-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 13rem;
+    padding: 2rem;
+    border-top: 2px solid $white;
+    background-color: $transparent;
+
+    div{
+        display: flex;
+        justify-content: space-between;
+
+        p{
+            color: $white;
+            font-size: 1.3rem;
+            font-weight: 300;
+        }
+    }
+}

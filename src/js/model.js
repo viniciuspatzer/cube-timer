@@ -11,7 +11,7 @@ export const state = {
         minutes: 0,
     },
     overview: {},
-    history: [],
+    history: {},
     timerInterval: '',
 };
 

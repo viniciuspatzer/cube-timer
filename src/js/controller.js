@@ -1,25 +1,31 @@
 import * as model from "./model";
 import mainView from "./views/mainView";
-
-// Model communicate with the controller and the other way around
-// and the controller communicate with the views
-
-
-
-
+import { bgColors } from "./config";
 
 
 const controlTimer = function () {
-    if (!model.state.running)
+    if (!model.state.running) {
         model.initTimer();
-    else
+        mainView.hideDeleteButton();
+        mainView.hideMessage();
+    }
+
+    else if (model.state.running) {
         model.stopTimer();
+        mainView.changeBgColor(bgColors.red);
+        mainView.renderDeleteButton();
+
+        // ... overview, history, chart
+
+
+        mainView.renderScramble();
+    }
 };
 
 
 
 (function init() {
-    console.log('init');
     mainView.renderScramble();
-    mainView.addHandlerStartTimer(controlTimer);
+    mainView.handlePressingClick();
+    mainView.handleTimer(controlTimer);
 })();

@@ -15,6 +15,9 @@ $red: #EB6363; // (red)
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
 
 // Font
 html{
@@ -26,7 +29,6 @@ html{
 // Other
 body{
     height: 100%;
-
     background-color: #176FD4;
 }
 

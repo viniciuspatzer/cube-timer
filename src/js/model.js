@@ -3,10 +3,11 @@ import { formatTime } from "./helpers";
 
 export const state = {
     running: false,
-    time: '',
+    time: null,
+    formatedTime: '',
     overview: {},
     history: {},
-    timerInterval: '',
+    timerInterval: null,
 };
 
 export const initTimer = function () {
@@ -27,11 +28,11 @@ export const initTimer = function () {
             minutes += 1;
         }
 
-        const formatedTime =
+        const stringTime =
             `${formatTime(minutes)}:${formatTime(seconds)}:${formatTime(milliseconds)}`;
 
-        state.time = formatedTime;
-        // console.log(state.time);
+        state.formatedTime = stringTime;
+        document.querySelector('.timer').textContent = state.formatedTime;
     };
     tick();
 

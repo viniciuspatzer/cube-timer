@@ -2,6 +2,7 @@ export const SCRAMBLE_CASES = ['F', 'B', 'R', 'L', 'U', 'D', 'F\'', 'B\'', 'R\''
 
 export const bgColors = {
     blue: '#176FD4',
+    orange: '#FFBA66',
     green: '#6FE86F',
-    red: '#EB6363'
+    red: '#EB6363',
 };

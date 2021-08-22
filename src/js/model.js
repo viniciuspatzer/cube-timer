@@ -1,24 +1,33 @@
 
-import { formatTime } from "./helpers";
+import { formatTimeArray } from "./helpers";
+import { formatTimeMill } from "./helpers";
 
 export const state = {
     running: false,
     time: null,
-    formatedTime: '',
-    overview: {},
-    history: {},
+    overview: {
+        fastestOfFive: 0,
+        slowestOfFive: 0,
+        averageOfFive: 0,
+        averageOfTwelve: 0,
+        slowestTime: 0,
+        fastestTime: 0,
+        amountOfSolves: 0,
+        overallAverage: 0,
+    },
+    history: [],
     timerInterval: null,
 };
 
 export const initTimer = function () {
     state.running = true;
 
-    let minutes = 0, seconds = 0, milliseconds = 0;
+    let minutes = 0, seconds = 0, milliseconds = 0, time = 0;
 
     function tick() {
-        milliseconds += 1;
+        milliseconds += 10, time += 10;
 
-        if (milliseconds === 100) {
+        if (milliseconds === 1000) {
             milliseconds = 0;
             seconds += 1;
         }
@@ -28,11 +37,9 @@ export const initTimer = function () {
             minutes += 1;
         }
 
-        const stringTime =
-            `${formatTime(minutes)}:${formatTime(seconds)}:${formatTime(milliseconds)}`;
-
-        state.formatedTime = stringTime;
-        document.querySelector('.timer').textContent = state.formatedTime;
+        state.time = time;
+        document.querySelector('.timer').textContent =
+            formatTimeArray([minutes, seconds, milliseconds]);
     };
     tick();
 
@@ -41,15 +48,47 @@ export const initTimer = function () {
 
 export const stopTimer = function () {
     state.running = false;
-
-    state.time = {
-        milliseconds: 0,
-        seconds: 0,
-        minutes: 0,
-    };
-
     clearInterval(state.timerInterval);
 };
+
+export const saveInHistory = function () {
+    state.history.push({
+        time: state.time,
+        scramble: document.querySelector('.scramble-formula').textContent,
+        date: new Intl.DateTimeFormat(navigator.language, {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+        }).format(new Date()),
+    });
+};
+
+export const calcOverview = function () {
+    const solves = state.history.map(obj => obj.time);
+    const last5Solves = solves.slice(-5);
+    const last12Solves = solves.slice(-12);
+
+    state.overview.fastestOfFive = formatTimeMill(Math.min(...last5Solves));
+    state.overview.slowestOfFive = formatTimeMill(Math.max(...last5Solves));
+
+    state.overview.slowestTime = formatTimeMill(Math.min(...solves));
+    state.overview.fastestTime = formatTimeMill(Math.max(...solves));
+    state.overview.amountOfSolves = state.history.length;
+
+    state.overview.averageOfFive =
+        formatTimeMill(last5Solves.reduce((acc, value) => acc + value / last5Solves.length, 0));
+
+    state.overview.averageOfTwelve =
+        formatTimeMill(last12Solves.reduce((acc, value) => acc + value / last5Solves.length, 0));
+
+    state.overview.overallAverage =
+        formatTimeMill(solves.reduce((acc, value) => acc + value / solves.length, 0));
+};
+
+
 
 
 

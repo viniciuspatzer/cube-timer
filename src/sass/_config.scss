@@ -1,7 +1,7 @@
 
 // Colors:
-$white: #FFFFFF; // (blue)
-$transparent: rgba(0, 0, 0, 0.70); // (blue)
+$white: #FFFFFF; // (white)
+$transparent: rgba(0, 0, 0, 0.70); // (transparent)
 $blue: #176FD4; // (blue)
 $green: #6FE86F; // (green)
 $red: #EB6363; // (red)
@@ -37,7 +37,7 @@ body > *{
 }
 
 .hidden{
-    display: none;
+    visibility: hidden;
 }
 
 // Animations
@@ -47,7 +47,6 @@ body > *{
 
     
     &:hover{
-        transform: scale(1.05);
         opacity: 0.8;
     }
 }

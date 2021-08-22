@@ -55,8 +55,10 @@ class MainView {
     handlePressingClick() {
         ['keypress', 'mousedown']
             .forEach(ev => window.addEventListener(ev, e => {
-                if (isValidEvent(e))
-                    this.changeBgColor(bgColors.green);
+                if (isValidEvent(e)) {
+                    this.changeBgColor(bgColors.orange);
+                    this.hideDeleteButton();
+                }
             }));
     }
 }

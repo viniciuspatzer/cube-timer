@@ -1,11 +1,9 @@
-
 export const randomNumber = max => Math.trunc(Math.random() * max);
 
 export const isValidEvent = function (e) {
     if (e.code === 'Space' || e.target === document.querySelector('div.main'))
         return true
 };
-
 
 
 const format = time => time.toString().padStart(2, '0');

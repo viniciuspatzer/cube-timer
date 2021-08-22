@@ -1,4 +1,3 @@
-
 import { formatTimeArray } from "./helpers";
 import { formatTimeMill } from "./helpers";
 
@@ -21,11 +20,12 @@ export const state = {
 
 export const initTimer = function () {
     state.running = true;
+    state.time = 0;
 
-    let minutes = 0, seconds = 0, milliseconds = 0, time = 0;
+    let minutes = 0, seconds = 0, milliseconds = 0;
 
     function tick() {
-        milliseconds += 10, time += 10;
+        milliseconds += 10, state.time += 10;
 
         if (milliseconds === 1000) {
             milliseconds = 0;
@@ -37,7 +37,6 @@ export const initTimer = function () {
             minutes += 1;
         }
 
-        state.time = time;
         document.querySelector('.timer').textContent =
             formatTimeArray([minutes, seconds, milliseconds]);
     };
